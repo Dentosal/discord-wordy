@@ -25,6 +25,7 @@ parser.add_argument('-i', '--interval', default=60 * 10, type=int)
 parser.add_argument('rest', nargs=argparse.REMAINDER)
 
 args = parser.parse_args()
+pull_changes()
 child = subprocess.Popen(args.rest)
 for _ in autoupdate(args.interval):
     print("Restarting...")
